@@ -1,0 +1,1 @@
+"""Taking PNG input"""
