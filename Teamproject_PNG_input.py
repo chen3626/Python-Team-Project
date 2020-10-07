@@ -14,7 +14,7 @@ def PNG_Input():
     img is a matrix
     each 3x3 set in img is a pixel
     Each row in every 3x3 inner list correlates with RGB
-    #not sure what the columns represent yet
+    #not sure what the columns represent exactly, I know they have something to do with brightness
     '''
    
     plt.imshow(img)
