@@ -1,15 +1,18 @@
 """Edge blurring/noise smoothing on image function"""
 
+import numpy as np
+
 def blur(image):
-    result = image.copy()
+    result = np.empty(image.shape)
     
-    for i in range(1, len(image[0]) - 1):
-        for j in range(1, len(image) - 1):
-            for x in range(-1, 2):
-                for y in range(-1, 2):
-                    if x != 0 and y != 0:
-                        result[j][i] += image[j + y][i + x]
-            
-            result[j][i] /= 9
+    gauss_matrix = np.array([[1,   4,   6,   4,  1],
+                             [4,  16,  24,  16,  4],
+                             [6,  24,  36,  24,  6],
+                             [4,  16,  24,  16,  4],
+                             [1,   4,   6,   4,  1]])
+    
+    for i in range(3, len(image[0]) - 3):
+        for j in range(3, len(image) - 3):
+            result[j][i] = np.average(image[j-2:j+3, i-2:i+3], weights=gauss_matrix, axis=(0, 1))
             
     return result
