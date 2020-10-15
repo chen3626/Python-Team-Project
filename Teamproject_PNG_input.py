@@ -7,21 +7,7 @@ import matplotlib.image as mpimg
 
 def PNG_Input():
     print('Enter the destination of the PNG:')
-    png_destination = input()
-    
+    png_destination = input()    
     img = mpimg.imread(png_destination)
-    '''
-    img is a matrix
-    each 3x3 set in img is a pixel
-    Each row in every 3x3 inner list correlates with RGB
-    #not sure what the columns represent exactly, I know they have something to do with brightness
-    '''
-   
-    plt.imshow(img)
-    '''
-    plt.imshow() prints the image into 'plots'
-    '''
     
     return img
-
-
