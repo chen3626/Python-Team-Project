@@ -27,3 +27,9 @@ def sobel_y(image):
             result[j][i] = np.sum(image[j-1:j+2, i-1:i+2] * kernel)
             
     return result
+
+def sobel_all(image):
+    x = sobel_x(image)
+    y = sobel_y(image)
+    
+    return np.sqrt(np.power(x, 2) + np.power(y, 2))
