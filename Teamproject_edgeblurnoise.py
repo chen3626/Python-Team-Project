@@ -15,4 +15,5 @@ def blur(image):
         for j in range(3, len(image) - 3):
             result[j][i] = np.average(image[j-2:j+3, i-2:i+3], weights=gauss_matrix, axis=(0, 1))
             
+
     return result

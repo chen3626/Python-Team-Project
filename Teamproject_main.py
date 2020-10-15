@@ -3,9 +3,15 @@
 import Teamproject_PNG_input as png
 import Teamproject_grayscale as gray
 
+import Teamproject_edgeblurnoise as blur
+import Teamproject_edgehighpassfiltering as edge
+
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+
 
 #Acquire PNG input from user
 image_matrix = png.PNG_Input()
@@ -21,6 +27,15 @@ b ----> specific line from array
 gray_image = gray.Grayscale(image_matrix)
 
 
+blur_image = blur.blur(gray_image)
+
+sobel_all = edge.sobel_all(blur_image)
+
+
+#print(image_matrix)
+#print(gray_image)
+=======
+
 
 
 
@@ -32,6 +47,11 @@ gray_image = gray.Grayscale(image_matrix)
 '''plotting all the images'''
 f, axarr = plt.subplots(2,2)
 axarr[0,0].imshow(image_matrix)
+
+axarr[0,1].imshow(blur_image, cmap="gray")
+axarr[1,0].imshow(sobel_all, cmap="gray")
+#axarr[1,1].imshow(sobel_y_image, cmap="gray")
+=======
 axarr[0,1].imshow(gray_image)
 #axarr[1,0].imshow()
 #axarr[1,1].imshow()

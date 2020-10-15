@@ -13,8 +13,3 @@ def PNG_Input():
     return img
 
 
-
-
-
-
-
