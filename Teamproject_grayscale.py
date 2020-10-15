@@ -3,5 +3,7 @@
 
 import numpy as np
 
+
 def Grayscale(x):   
     return np.dot(x[...,:3], [.2126, .7152, .0722])
+
