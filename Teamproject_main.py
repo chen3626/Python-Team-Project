@@ -1,5 +1,20 @@
-"""Main"""
-#C:\Users\skcst\Desktop\Python_Team\PNG\Purdue_Arch.png
+
+'''
+===============================================================================
+ENGR 133 Fa 2020
+
+Assignment Information
+	Assignment:     Python Team Project (main)
+	Author(s):      Steve Chen, chen3626@purdue.edu
+                    Eric Mesina, emesina@purdue.edu
+                    Danny Mcnulty, mcnulty1@purdue.edu
+                    Kyle Nematz, knematz@purdue.edu
+	Team ID:        LC4-09
+	
+
+===============================================================================
+'''
+'''import all modules and files'''
 import Teamproject_PNG_input as png
 import Teamproject_grayscale as gray
 import Teamproject_edgeblurnoise as noise
@@ -10,15 +25,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
-#Acquire PNG input from user
+'''Acquire PNG input from user'''
 image_matrix = png.PNG_Input()
-'''
-image_matrix is a matrix of the pixels from png
-check to see if code works by clicking on 'plots' in spyder ide
-image_matrix[a][b]
-a ----> specific matrix from array
-b ----> specific line from array
-'''
 
 '''convert to grayscale'''
 gray_image = gray.Grayscale(image_matrix)
@@ -40,3 +48,26 @@ axarr[0,1].imshow(gray_image, cmap='gray')
 axarr[0,2].imshow(blur_image, cmap='gray')
 axarr[1,0].imshow(sobel_all, cmap='gray')
 axarr[1,1].imshow(thresh_image, cmap='gray')
+
+'''save images as PNG'''
+plt.imsave('original.png', image_matrix)
+plt.imsave('grayscale_image.png', gray_image, cmap = 'gray')
+plt.imsave('smooth_image.png', blur_image, cmap = 'gray')
+plt.imsave('edge_enhanced_image.png', sobel_all, cmap = 'gray')
+plt.imsave('threshold_image.png', thresh_image, cmap = 'gray')
+
+'''
+===============================================================================
+ACADEMIC INTEGRITY STATEMENT
+    I have not used source code obtained from any other unauthorized
+    source, either modified or unmodified. Neither have I provided
+    access to my code to another. The project I am submitting
+    is my own original work.
+===============================================================================
+'''
+
+
+
+
+
+
